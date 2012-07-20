@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiSystems.Interpreter.UnitTests.MonoTouch", "HiSystems.Interpreter.UnitTests.MonoTouch.csproj", "{63814569-B858-4C6F-B012-2F66D0D9D9FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HiSystems.Interpreter.MonoTouch", "..\Interpreter\HiSystems.Interpreter.MonoTouch.csproj", "{B7F045FA-2E47-40EE-9501-B407C52D9D19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63814569-B858-4C6F-B012-2F66D0D9D9FD}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{63814569-B858-4C6F-B012-2F66D0D9D9FD}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{63814569-B858-4C6F-B012-2F66D0D9D9FD}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{63814569-B858-4C6F-B012-2F66D0D9D9FD}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{63814569-B858-4C6F-B012-2F66D0D9D9FD}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{63814569-B858-4C6F-B012-2F66D0D9D9FD}.Debug|iPhone.Build.0 = Debug|iPhone
+		{63814569-B858-4C6F-B012-2F66D0D9D9FD}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{63814569-B858-4C6F-B012-2F66D0D9D9FD}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{63814569-B858-4C6F-B012-2F66D0D9D9FD}.Release|iPhone.ActiveCfg = Release|iPhone
+		{63814569-B858-4C6F-B012-2F66D0D9D9FD}.Release|iPhone.Build.0 = Release|iPhone
+		{63814569-B858-4C6F-B012-2F66D0D9D9FD}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{63814569-B858-4C6F-B012-2F66D0D9D9FD}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{B7F045FA-2E47-40EE-9501-B407C52D9D19}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{B7F045FA-2E47-40EE-9501-B407C52D9D19}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{B7F045FA-2E47-40EE-9501-B407C52D9D19}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{B7F045FA-2E47-40EE-9501-B407C52D9D19}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{B7F045FA-2E47-40EE-9501-B407C52D9D19}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{B7F045FA-2E47-40EE-9501-B407C52D9D19}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{B7F045FA-2E47-40EE-9501-B407C52D9D19}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{B7F045FA-2E47-40EE-9501-B407C52D9D19}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{B7F045FA-2E47-40EE-9501-B407C52D9D19}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{B7F045FA-2E47-40EE-9501-B407C52D9D19}.Release|iPhone.Build.0 = Release|Any CPU
+		{B7F045FA-2E47-40EE-9501-B407C52D9D19}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{B7F045FA-2E47-40EE-9501-B407C52D9D19}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = HiSystems.Interpreter.UnitTests.MonoTouch.csproj
+	EndGlobalSection
+EndGlobal

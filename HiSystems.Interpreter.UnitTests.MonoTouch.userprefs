@@ -1,0 +1,44 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="readme.md">
+    <Files>
+      <File FileName="Tests/CustomFunctionTests.cs" Line="7" Column="2" />
+      <File FileName="../Interpreter/Functions/Function.cs" Line="55" Column="57" />
+      <File FileName="../Interpreter/Functions/Average.cs" Line="32" Column="70" />
+      <File FileName="../Interpreter/Functions/If.cs" Line="33" Column="43" />
+      <File FileName="../Interpreter/Functions/Sum.cs" Line="16" Column="51" />
+      <File FileName="Tests/EngineTests.cs" Line="93" Column="27" />
+      <File FileName="Tests/EqualityOperatorTests.cs" Line="80" Column="3" />
+      <File FileName="../Interpreter/Operators/Operator.cs" Line="37" Column="3" />
+      <File FileName="../Interpreter/Operators/NotEqualToOperator.cs" Line="17" Column="1" />
+      <File FileName="../Interpreter/Operators/EqualToOperator.cs" Line="16" Column="28" />
+      <File FileName="readme.md" Line="48" Column="4" />
+      <File FileName="Tests/DataSetTests.cs" Line="95" Column="23" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State expanded="True">
+          <Node name="HiSystems.Interpreter.MonoTouch" expanded="True">
+            <Node name="Engine" expanded="True" />
+            <Node name="Functions" expanded="True" />
+            <Node name="Operators" expanded="True" />
+          </Node>
+          <Node name="HiSystems.Interpreter.UnitTests.MonoTouch" expanded="True">
+            <Node name="Tests" expanded="True" />
+            <Node name="readme.md" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="ClassPad">
+        <State expanded="True" selected="True" />
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
