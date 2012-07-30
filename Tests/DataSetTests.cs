@@ -88,9 +88,9 @@ namespace HiSystems.Interpreter.UnitTests
 			{
 				base.EnsureArgumentCountIs(arguments, 1);
 				
-				var tableName = base.GetVariable(arguments, 0).Name;
+				var tableName = base.GetTransformedArgument<Text>(arguments, 0);
 
-				return new DataSet(tableName);
+                return new DataSet(tableName);
 			}
 		}
 
@@ -104,7 +104,7 @@ namespace HiSystems.Interpreter.UnitTests
 		[Test]
 		public void DataSetSumColumn0()
 		{
-            var expression = Engine.Parse("SUM(SELECT(0, DATASET(TableName)))");
+            var expression = Engine.Parse("SUM(SELECT(0, DATASET(\"TableName\")))");
 
             Assert.That(expression.Execute(), Is.EqualTo((Number)9));
 		}
@@ -112,7 +112,7 @@ namespace HiSystems.Interpreter.UnitTests
 		[Test]
 		public void DataSetSumColumn1()
 		{
-            var expression = Engine.Parse("SUM(SELECT(1, DATASET(TableName)))");
+            var expression = Engine.Parse("SUM(SELECT(1, DATASET(\"TableName\")))");
 
             Assert.That(expression.Execute(), Is.EqualTo((Number)11));
 		}
