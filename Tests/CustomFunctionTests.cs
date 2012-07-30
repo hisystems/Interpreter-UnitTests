@@ -8,6 +8,8 @@ namespace HiSystems.Interpreter.UnitTests
 	[TestFixture]
 	public class CustomFunctionTests
 	{
+        public static Engine Engine = new Engine();
+        
         class NegateNumber : Function
         {
 	        public override string Name 

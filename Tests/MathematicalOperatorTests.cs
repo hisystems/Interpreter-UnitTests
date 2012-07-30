@@ -6,6 +6,8 @@ namespace HiSystems.Interpreter.UnitTests
 	[TestFixture]
 	public class MathematicalOperatorTests
 	{
+        public static Engine Engine = new Engine();
+        
 		[Test]
 		public void Addition()
 		{

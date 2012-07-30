@@ -6,6 +6,8 @@ namespace HiSystems.Interpreter.UnitTests
 	[TestFixture]
 	public class LogicalOperatorTests
 	{
+        public static Engine Engine = new Engine();
+        
 		[Test]
 		public void LogicalTrueAndTrue()
 		{

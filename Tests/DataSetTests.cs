@@ -8,6 +8,8 @@ namespace HiSystems.Interpreter.UnitTests
 	[TestFixture]
 	public class DataSetTests
 	{
+        public static Engine Engine = new Engine();
+        
 		private class DataSet : Literal
 		{
 			private class DataRow

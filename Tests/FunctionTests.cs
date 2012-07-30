@@ -6,6 +6,8 @@ namespace HiSystems.Interpreter.UnitTests
 	[TestFixture]
 	public class FunctionTests
 	{
+        public static Engine Engine = new Engine();
+        
 		[Test]
 		public void SumFunction()
 		{
