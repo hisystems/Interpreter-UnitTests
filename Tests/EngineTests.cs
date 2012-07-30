@@ -97,5 +97,16 @@ namespace HiSystems.Interpreter.UnitTests
 			Engine.Parse("AVG(1,2)").Execute();
 		}
 		
+        [Test]
+        public void FunctionAsVariable()
+        {
+            var subFunction = Engine.Parse("SUM(A)");
+            subFunction.Variables["A"].Value = new Array(new decimal[] { 1, 2 });
+
+            var mainFunction = Engine.Parse("IF(A > 0, 1, 2)");
+            mainFunction.Variables["A"].Value = subFunction;
+
+            Assert.That(mainFunction.Execute(), Is.EqualTo((Number)1));
+        }
 	}
 }
