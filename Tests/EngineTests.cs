@@ -47,14 +47,7 @@ namespace HiSystems.Interpreter.UnitTests
 
             Assert.That(expression.Execute(), Is.EqualTo((Number)1));
 		}
-					
-		[Test]
-		[ExpectedException(typeof(InvalidOperationException))]
-		public void FunctionMissingArguments()
-		{
-			Engine.Parse("AVG()");
-		}
-
+			
 		[Test]
 		[ExpectedException(typeof(InvalidOperationException))]
 		public void FunctionMissingArgumentInStart()

@@ -6,8 +6,15 @@ namespace HiSystems.Interpreter.UnitTests
 	[TestFixture]
 	public class FunctionTests
 	{
-        public static Engine Engine = new Engine();
-        
+        private Engine Engine = new Engine();
+
+        [SetUp]
+        public void Setup()
+        {
+            this.Engine = new Engine();
+            this.Engine.Register(new Today());
+        }
+
 		[Test]
 		public void SumFunction()
 		{
@@ -34,5 +41,15 @@ namespace HiSystems.Interpreter.UnitTests
 
             Assert.That(expression.Execute(), Is.EqualTo((Number)4));
 		}
+
+        [Test]
+        public void Today()
+        {
+            var tomorrow = System.DateTime.Today.AddDays(1);
+            
+            var expression = Engine.Parse("TODAY() + 1");
+
+            Assert.That(expression.Execute(), Is.EqualTo((Interpreter.DateTime)tomorrow));;
+        }
 	}
 }

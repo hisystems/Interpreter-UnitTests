@@ -91,6 +91,7 @@
     <Compile Include="MonoTouch\AppDelegate.cs" />
     <Compile Include="MonoTouch\Main.cs" />
     <Compile Include="Tests\CustomFunctionTests.cs" />
+    <Compile Include="Tests\DateTimeTests.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
