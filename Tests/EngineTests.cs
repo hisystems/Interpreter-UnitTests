@@ -91,6 +91,15 @@ namespace HiSystems.Interpreter.UnitTests
 		}
 		
         [Test]
+        public void VariableSpecifiedTwice()
+        {
+            var expression = Engine.Parse("A = A");
+            expression.Variables["A"].Value = (Number)1;
+
+            Assert.That(expression.Execute(), Is.EqualTo((Boolean)true));
+        }
+
+        [Test]
         public void FunctionAsVariable()
         {
             var subFunction = Engine.Parse("SUM(A)");
