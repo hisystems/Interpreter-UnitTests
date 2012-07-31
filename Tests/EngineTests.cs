@@ -110,5 +110,19 @@ namespace HiSystems.Interpreter.UnitTests
 
             Assert.That(mainFunction.Execute(), Is.EqualTo((Number)1));
         }
+        
+        [Test]
+        public void ExecuteWithCast()
+        {
+            Assert.That(Engine.Parse("1 = 1").Execute<Boolean>(), Is.EqualTo((Boolean)true));
+        }
+        
+        [Test]
+        [ExpectedException(typeof(InvalidCastException))]
+        public void ExecuteWithCastFailure()
+        {
+            // returns type Boolean not Number
+            Engine.Parse("1 = 1").Execute<Number>();
+        }
 	}
 }
