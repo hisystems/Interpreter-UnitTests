@@ -124,5 +124,22 @@ namespace HiSystems.Interpreter.UnitTests
             // returns type Boolean not Number
             Engine.Parse("1 = 1").Execute<Number>();
         }
+
+        [Test]
+        public void IdentifierWithNumericCharacter()
+        {
+            var expression = Engine.Parse("A1 = A1B");
+            expression.Variables["A1"].Value = (Number)1;
+            expression.Variables["A1B"].Value = (Number)1;
+
+            Assert.That(expression.Execute(), Is.EqualTo((Boolean)true));
+        }
+        
+        [Test]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void IdentifierWithNumericCharacterAtStart()
+        {
+            Engine.Parse("A1 = 1B");
+        }
 	}
 }
