@@ -71,5 +71,13 @@ namespace HiSystems.Interpreter.UnitTests
 
             Assert.That(expression.Execute(), Is.EqualTo((Text)"ABC'DEF"));
         }
+                
+        [Test]
+        public void ImplicitStringToExpressionConversion()
+        {
+            Expression expression = "ABC";
+
+            Assert.That(expression.Execute(), Is.EqualTo((Text)"ABC"));
+        }
     }
 }
