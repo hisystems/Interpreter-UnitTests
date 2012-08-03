@@ -47,5 +47,29 @@ namespace HiSystems.Interpreter.UnitTests
 
             Assert.That(expression.Execute(), Is.EqualTo((Text)"AA"));
         }
+
+        [Test]
+        public void TextUsingSingleQuote()
+        {
+            var expression = Engine.Parse("'ABC'");
+
+            Assert.That(expression.Execute(), Is.EqualTo((Text)"ABC"));
+        }
+		
+        [Test]
+        public void TextUsingSingleQuoteIntermixedWithDoubleQuote()
+        {
+            var expression = Engine.Parse("'ABC\"DEF'");
+
+            Assert.That(expression.Execute(), Is.EqualTo((Text)"ABC\"DEF"));
+        }
+		
+        [Test]
+        public void TextUsingDoubleQuoteIntermixedWithSingleQuote()
+        {
+            var expression = Engine.Parse("\"ABC'DEF\"");
+
+            Assert.That(expression.Execute(), Is.EqualTo((Text)"ABC'DEF"));
+        }
     }
 }
