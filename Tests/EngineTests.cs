@@ -141,5 +141,11 @@ namespace HiSystems.Interpreter.UnitTests
         {
             Engine.Parse("A1 = 1B");
         }
+        
+        [Test]
+        public void FunctionWithEmptyArguments()
+        {
+            Engine.Parse("SUM(SUM())");
+        }
 	}
 }
