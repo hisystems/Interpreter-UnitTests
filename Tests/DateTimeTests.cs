@@ -172,5 +172,43 @@ namespace HiSystems.Interpreter.UnitTests
 
             Assert.That(expression.Execute(), Is.EqualTo((Boolean)false));;
         }
+        
+        [Test]
+        public void DateTimeConstant()
+        {
+            var dateString = "2000-12-31 13:45:56.7";
+
+            var expression = Engine.Parse("#" + dateString + "#");
+
+            Assert.That(expression.Execute<DateTime>(), Is.EqualTo((Interpreter.DateTime)System.DateTime.Parse(dateString)));;
+        }
+                            
+        [Test]
+        public void DateConstant()
+        {
+            var dateString = "2000-12-31";
+
+            var expression = Engine.Parse("#" + dateString + "#");
+
+            Assert.That(expression.Execute<DateTime>(), Is.EqualTo((Interpreter.DateTime)System.DateTime.Parse(dateString)));;
+        }
+
+        [Test]
+        public void TimeConstant()
+        {
+            var dateString = "13:45:56.7";
+
+            var expression = Engine.Parse("#" + dateString + "#");
+
+            Assert.That(expression.Execute<DateTime>(), Is.EqualTo((Interpreter.DateTime)System.DateTime.Parse(dateString)));;
+        }
+
+        [Test]
+        public void DateTimeDifference()
+        {
+            var expression = Engine.Parse("#2000-1-2# - #2000-1-1#");
+
+            Assert.That(expression.Execute<Number>(), Is.EqualTo((Number)1));;
+        }
     }
 }
