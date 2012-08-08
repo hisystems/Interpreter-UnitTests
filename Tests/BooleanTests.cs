@@ -21,6 +21,13 @@ namespace HiSystems.Interpreter.UnitTests
         {
             Assert.That(Engine.Parse("false").Execute<Boolean>(), Is.EqualTo((Boolean)false));
         }
-        
+                        
+        [Test]
+        public void ImplicitBooleanToExpressionConversion()
+        {
+            Expression expression = true;
+
+            Assert.That(expression.Execute(), Is.EqualTo((Boolean)true));
+        }
 	}
 }
