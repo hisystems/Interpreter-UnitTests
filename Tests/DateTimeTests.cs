@@ -55,6 +55,19 @@ namespace HiSystems.Interpreter.UnitTests
 
             Assert.That(expression.Execute(), Is.EqualTo((Interpreter.DateTime)yesterday));
         }
+        
+        [Test]
+        public void SubtractDate()
+        {
+            var today = System.DateTime.Today;
+            var yesterday = today.AddDays(-1);
+
+            var expression = Engine.Parse("TODAY - YESTERDAY");
+            expression.Variables["TODAY"].Value = new Interpreter.DateTime(today);
+            expression.Variables["YESTERDAY"].Value = new Interpreter.DateTime(yesterday);
+
+            Assert.That(expression.Execute(), Is.EqualTo((Interpreter.Number)1));
+        }
 
         [Test]
         public void LessThan()
