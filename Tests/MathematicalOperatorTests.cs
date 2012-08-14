@@ -37,5 +37,11 @@ namespace HiSystems.Interpreter.UnitTests
 		{
             Assert.That(Engine.Parse("1 / 2").Execute(), Is.EqualTo((Number)0.5));
 		}
+        
+        [Test]
+        public void Modulus()
+        {
+            Assert.That(Engine.Parse("3 % 2").Execute(), Is.EqualTo((Number)1));
+        }
 	}
 }
