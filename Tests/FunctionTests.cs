@@ -51,5 +51,37 @@ namespace HiSystems.Interpreter.UnitTests
 
             Assert.That(expression.Execute(), Is.EqualTo((Interpreter.DateTime)tomorrow));;
         }
+        
+        [Test]
+        public void FormatDateTimeDefault()
+        {
+            var expression = Engine.Parse("Format(#2000-2-1#)");
+
+            Assert.That(expression.Execute(), Is.TypeOf<Text>());
+        }
+
+        [Test]
+        public void FormatDateTime()
+        {
+            var expression = Engine.Parse("Format(#2000-2-1#, 'd/M/yyyy')");
+
+            Assert.That(expression.Execute(), Is.EqualTo((Text)"1/2/2000"));
+        }
+        
+        [Test]
+        public void FormatNumberDefault()
+        {
+            var expression = Engine.Parse("Format(1)");
+
+            Assert.That(expression.Execute(), Is.EqualTo((Text)"1"));
+        }
+
+        [Test]
+        public void FormatNumber()
+        {
+            var expression = Engine.Parse("Format(1, '0.0')");
+
+            Assert.That(expression.Execute(), Is.EqualTo((Text)"1.0"));
+        }
 	}
 }
