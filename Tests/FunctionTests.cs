@@ -83,5 +83,13 @@ namespace HiSystems.Interpreter.UnitTests
 
             Assert.That(expression.Execute(), Is.EqualTo((Text)"1.0"));
         }
+        
+        [Test]
+        public void Max()
+        {
+            var expression = Engine.Parse("Max(Array(1, 2, 3, 2, 1))");
+
+            Assert.That(expression.Execute(), Is.EqualTo((Number)3));
+        }
 	}
 }
