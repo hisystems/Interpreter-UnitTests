@@ -79,5 +79,13 @@ namespace HiSystems.Interpreter.UnitTests
 
             Assert.That(expression.Execute(), Is.EqualTo((Text)"ABC"));
         }
+        
+        [Test]
+        public void EmptyString()
+        {
+            var expression = Engine.Parse("''");
+
+            Assert.That(expression.Execute(), Is.EqualTo((Text)""));
+        }
     }
 }
