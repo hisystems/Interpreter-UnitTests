@@ -33,6 +33,18 @@ namespace HiSystems.Interpreter.UnitTests
             Assert.That(expression.Execute(), Is.EqualTo((Number)10));
 		}
 
+        /// <summary>
+        /// Even though A is not defined the short-circuit nature of the If statement 
+        /// means that A is never evaluated and no error is therefore thrown.
+        /// </summary>
+        [Test]
+        public void IfFunctionShortcircuit()
+        {
+            var expression = Engine.Parse("IF(True, 10, A)");
+
+            Assert.That(expression.Execute(), Is.EqualTo((Number)10));
+        }
+
 		[Test]
 		public void AvgFunction()
 		{
