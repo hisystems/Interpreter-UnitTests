@@ -147,5 +147,12 @@ namespace HiSystems.Interpreter.UnitTests
         {
             Engine.Parse("SUM(SUM())");
         }
+        
+        [Test]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void FunctionUndefined()
+        {
+            Engine.Parse("UndefinedFunction()");
+        }
 	}
 }
