@@ -103,5 +103,13 @@ namespace HiSystems.Interpreter.UnitTests
 
             Assert.That(expression.Execute(), Is.EqualTo((Number)3));
         }
+        
+        [Test]
+        public void Min()
+        {
+            var expression = Engine.Parse("Min(Array(1, 2, 3, 2, 1))");
+
+            Assert.That(expression.Execute(), Is.EqualTo((Number)1));
+        }
 	}
 }
