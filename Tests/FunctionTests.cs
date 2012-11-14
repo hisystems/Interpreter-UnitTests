@@ -12,7 +12,6 @@ namespace HiSystems.Interpreter.UnitTests
         public void Setup()
         {
             this.Engine = new Engine();
-            this.Engine.Register(new Today());
         }
 
 		[Test]
