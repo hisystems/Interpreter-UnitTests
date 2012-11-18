@@ -55,7 +55,7 @@ namespace HiSystems.Interpreter.UnitTests
 
             Assert.That(expression.Execute(), Is.EqualTo((Text)"ABC"));
         }
-		
+        
         [Test]
         public void TextUsingSingleQuoteIntermixedWithDoubleQuote()
         {
@@ -63,7 +63,7 @@ namespace HiSystems.Interpreter.UnitTests
 
             Assert.That(expression.Execute(), Is.EqualTo((Text)"ABC\"DEF"));
         }
-		
+        
         [Test]
         public void TextUsingDoubleQuoteIntermixedWithSingleQuote()
         {

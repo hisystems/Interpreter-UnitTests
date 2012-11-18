@@ -5,17 +5,17 @@ using System.Collections.Generic;
 
 namespace HiSystems.Interpreter.UnitTests
 {
-	[TestFixture]
-	public class BooleanTests
-	{
+    [TestFixture]
+    public class BooleanTests
+    {
         public static Engine Engine = new Engine();
         
-		[Test]
-		public void TrueConstant()
-		{
+        [Test]
+        public void TrueConstant()
+        {
             Assert.That(Engine.Parse("true").Execute<Boolean>(), Is.EqualTo((Boolean)true));
-		}
-		
+        }
+        
         [Test]
         public void FalseConstant()
         {
@@ -29,5 +29,5 @@ namespace HiSystems.Interpreter.UnitTests
 
             Assert.That(expression.Execute(), Is.EqualTo((Boolean)true));
         }
-	}
+    }
 }
