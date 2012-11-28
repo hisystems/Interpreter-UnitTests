@@ -110,5 +110,21 @@ namespace HiSystems.Interpreter.UnitTests
 
             Assert.That(expression.Execute(), Is.EqualTo((Number)1));
         }
+        
+        [Test]
+        public void Len()
+        {
+            var expression = Engine.Parse("Len('123')");
+            
+            Assert.That(expression.Execute(), Is.EqualTo((Number)3));
+        }
+        
+        [Test]
+        public void LenEmpty()
+        {
+            var expression = Engine.Parse("Len('')");
+            
+            Assert.That(expression.Execute(), Is.EqualTo((Number)0));
+        }
     }
 }
