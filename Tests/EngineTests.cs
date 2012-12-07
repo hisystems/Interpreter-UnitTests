@@ -154,5 +154,17 @@ namespace HiSystems.Interpreter.UnitTests
         {
             Engine.Parse("UndefinedFunction()");
         }
+
+        [Test]
+        public void ExpressionChain()
+        {
+            var expression1 = Engine.Parse("A + 2");
+            expression1.Variables["A"].Value = (Number)1;
+
+            var expression2 = Engine.Parse("Expression1 + 3");
+            expression2.Variables["Expression1"].Value = expression1;
+
+            Assert.That(expression2.Execute<Number>(), Is.EqualTo((Number)(1 + 2 + 3)));
+        }
     }
 }
