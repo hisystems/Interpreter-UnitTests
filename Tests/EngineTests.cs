@@ -166,5 +166,27 @@ namespace HiSystems.Interpreter.UnitTests
 
             Assert.That(expression2.Execute<Number>(), Is.EqualTo((Number)(1 + 2 + 3)));
         }
+        
+        [Test]
+        public void ExpressionOnDemand()
+        {
+            Assert.That(Engine.ParseOnDemand("1 + 2").Execute(), Is.EqualTo((Number)3));
+        }
+        
+        [Test]
+        public void ExpressionOnDemandWithVariables()
+        {
+            var expression = Engine.ParseOnDemand("A + 1");
+            expression.Variables["A"].Value = (Number)1;
+
+            Assert.That(expression.Execute(), Is.EqualTo((Number)2));
+        }
+
+        [Test]
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void ExpressionOnDemandSyntaxError()
+        {
+            Engine.ParseOnDemand("1 + + 2").Execute();
+        }
     }
 }
