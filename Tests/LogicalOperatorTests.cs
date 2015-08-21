@@ -44,5 +44,15 @@ namespace HiSystems.Interpreter.UnitTests
         {
             Engine.Parse("0 OR true").Execute();
         }
+
+		[Test]
+		public void LogicalXor()
+		{
+			Assert.That(Engine.Parse("false XOR false").Execute(), Is.EqualTo((Boolean)false));
+			Assert.That(Engine.Parse("false XOR true").Execute(), Is.EqualTo((Boolean)true));
+			Assert.That(Engine.Parse("true XOR false").Execute(), Is.EqualTo((Boolean)true));
+			Assert.That(Engine.Parse("true XOR true").Execute(), Is.EqualTo((Boolean)false));
+		}
+
     }
 }

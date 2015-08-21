@@ -38,7 +38,7 @@ namespace HiSystems.Interpreter.UnitTests
             var today = System.DateTime.Today;
             var tomorrow = today.AddDays(1);
 
-            var expression = Engine.Parse("A + 1");
+            var expression = Engine.Parse("A + `1`");
             expression.Variables["A"].Value = new Interpreter.DateTime(today);
 
             Assert.That(expression.Execute(), Is.EqualTo((Interpreter.DateTime)tomorrow));
@@ -50,7 +50,7 @@ namespace HiSystems.Interpreter.UnitTests
             var today = System.DateTime.Today;
             var yesterday = today.AddDays(-1);
 
-            var expression = Engine.Parse("A - 1");
+            var expression = Engine.Parse("A - `1`");
             expression.Variables["A"].Value = new Interpreter.DateTime(today);
 
             Assert.That(expression.Execute(), Is.EqualTo((Interpreter.DateTime)yesterday));
@@ -66,7 +66,7 @@ namespace HiSystems.Interpreter.UnitTests
             expression.Variables["TODAY"].Value = new Interpreter.DateTime(today);
             expression.Variables["YESTERDAY"].Value = new Interpreter.DateTime(yesterday);
 
-            Assert.That(expression.Execute(), Is.EqualTo((Interpreter.Number)1));
+            Assert.That(expression.Execute(), Is.EqualTo((Interpreter.TimeSpan)System.TimeSpan.FromDays(1)));
         }
 
         [Test]
@@ -208,7 +208,7 @@ namespace HiSystems.Interpreter.UnitTests
         {
             var expression = Engine.Parse("#2000-1-2# - #2000-1-1#");
 
-            Assert.That(expression.Execute<Number>(), Is.EqualTo((Number)1));;
+            Assert.That(expression.Execute<TimeSpan>(), Is.EqualTo((TimeSpan)System.TimeSpan.FromDays(1)));;
         }
     }
 }
