@@ -58,9 +58,9 @@ namespace HiSystems.Interpreter.UnitTests
         {
             var tomorrow = System.DateTime.Today.AddDays(1);
             
-            var expression = Engine.Parse("TODAY() + 1");
+            var expression = Engine.Parse("TODAY() + `1`"); //Add the one day timespan
 
-            Assert.That(expression.Execute(), Is.EqualTo((Interpreter.DateTime)tomorrow));;
+            Assert.That(expression.Execute(), Is.EqualTo((Interpreter.DateTime)tomorrow));
         }
         
         [Test]
